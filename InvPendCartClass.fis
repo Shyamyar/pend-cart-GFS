@@ -1,0 +1,47 @@
+[System]
+Name='InvPendCartClass'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='y'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=3
+MF1='N':'trimf',[-3.17 -1.67 -1.17]
+MF2='Z':'trimf',[-1.85 -0.923 -4.44089209850063e-16]
+MF3='P':'trimf',[-0.939 -0.0665 0.972523809523809]
+
+[Input2]
+Name='ydot'
+Range=[-10 10]
+NumMFs=3
+MF1='N':'trimf',[-3.17 -1.67 -1.17]
+MF2='Z':'trimf',[-1.85 -0.923 -4.44089209850063e-16]
+MF3='P':'trimf',[-0.939 -0.0665 0.972523809523809]
+
+[Output1]
+Name='output1'
+Range=[-10 10]
+NumMFs=3
+MF1='N':'trimf',[-3.17 -1.67 -1.17]
+MF2='Z':'trimf',[-1.85 -0.923 -4.44089209850063e-16]
+MF3='P':'trimf',[-0.939 -0.0665 0.972523809523809]
+
+[Rules]
+1 1, 3 (1) : 1
+1 2, 3 (1) : 1
+1 3, 2 (1) : 1
+2 1, 3 (1) : 1
+2 2, 2 (1) : 1
+2 3, 1 (1) : 1
+3 1, 1 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
